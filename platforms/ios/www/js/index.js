@@ -2,9 +2,6 @@ document.addEventListener("DOMContentLoaded", main);
 
 function main()
 {
-    document.getElementsByTagName("body")[0].width = window.innerHeight;
-    document.getElementsByTagName("body")[0].height = window.innerWidth;
-
     var app = new application();
     //.addScene(new menuScene(true, "MenuScene"));
  	app.start();
