@@ -114,7 +114,6 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
-<<<<<<< HEAD
 span {
     display: block;
     width: 200px;
@@ -166,5 +165,4 @@ button {
     top: 50%;
     margin-top: -50px;
     margin-left: -50px;
->>>>>>> 666a3779920a740a2235464fefd7f023a07403ae
 }
