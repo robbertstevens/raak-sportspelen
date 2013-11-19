@@ -114,6 +114,7 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+<<<<<<< HEAD
 span {
     display: block;
     width: 200px;
@@ -147,4 +148,23 @@ button {
 } /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
 ::-webkit-scrollbar-corner {
       background-color: black;
+}
+
+.wrapper {
+    /*text-align: center;
+    margin-top:50%;*/
+    
+}
+
+.button {
+    /*position: absolute:
+    top: 50%;*/
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left:50%;
+    top: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+>>>>>>> 666a3779920a740a2235464fefd7f023a07403ae
 }
