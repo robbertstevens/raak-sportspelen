@@ -18,6 +18,7 @@
  */
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    box-sizing: border-box
 }
 
 body {
@@ -112,4 +113,38 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+}
+span {
+    display: block;
+    width: 200px;
+    border-left: 1px solid #aaa;   
+    border-right: 1px solid #aaa;
+    border-top: 1px solid #aaa;
+}
+select {   
+    display: block;
+    border: none;
+    width: 200px;
+    margin-top: 0px;
+    border-left: 1px solid #aaa;   
+    border-right: 1px solid #aaa;
+}
+button { 
+    width: 200px;
+    border: 1px solid #aaa;
+}
+::-webkit-scrollbar {
+      width: 15px;
+}
+::-webkit-scrollbar-track {
+      background-color: #E4E4E4;
+} /* the new scrollbar will have a flat appearance with the set background color */
+::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+} /* this will style the thumb, ignoring the track */
+::-webkit-scrollbar-button {
+      background-color: #ccc;
+} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+::-webkit-scrollbar-corner {
+      background-color: black;
 }
