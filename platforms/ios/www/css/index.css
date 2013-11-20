@@ -46,7 +46,7 @@ body {
     font-size:12px;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
+    
 }
 
 
@@ -96,18 +96,39 @@ h1 {
 }
 span {
     display: block;
-    width: 200px;
-    border-left: 1px solid #aaa;   
+    width: 300px;
+    text-align:center;
+    font-size:32px;
+    /*border-left: 1px solid #aaa;   
     border-right: 1px solid #aaa;
-    border-top: 1px solid #aaa;
+    border-top: 1px solid #aaa;*/
 }
 select {   
     display: block;
     border: none;
-    width: 200px;
+    width: 300px;
     margin-top: 0px;
-    border-left: 1px solid #aaa;   
-    border-right: 1px solid #aaa;
+    /*border-left: 1px solid #aaa;   
+    border-right: 1px solid #aaa;*/
+    font-size:28px;
+}
+
+.container{
+    position: absolute;
+    margin: 0 auto;
+    width: 300px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -150px;    
+}
+
+#nextButton
+{
+    width: 300px;
+    height: 50px;
+    font-size:22px;
 }
 
 ::-webkit-scrollbar {
@@ -144,16 +165,7 @@ select {
     margin-left: -50px;
 }
 
-.container{
-    position: absolute;
-    margin: 0 auto;
-    width: 200px;
-    height: 200px;
-    top: 50%;
-    left: 50%;
-    margin-left: -100px;
-    margin-top: -100px;    
-}
+
 
 .backButton{
     width:100px;
