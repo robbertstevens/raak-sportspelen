@@ -196,6 +196,7 @@ a.tapped {
     margin-top: -50px !important;
     margin-left: -95px !important;
     line-height: 55px !important;
+    text-align: center !important;
 }
 
 .nextButton
