@@ -11,16 +11,12 @@ function initializeButtons()
     for (var i = buttons.length - 1; i >= 0; i--) {
     	console.log(buttons[i]);
     	buttons[i].addEventListener("touchstart",function(e){
-		    //e.preventDefault();		    
-		    for (var i = buttons.length - 1; i >= 0; i--) {
-		    		buttons[i].classList.add('tapped');
-		    }
+		    //e.preventDefault();
+		    this.classList.add('tapped');		    
     	}, false);
 	    	buttons[i].addEventListener("touchend", function(e){
-	    	//e.preventDefault();
-	    	for (var i = buttons.length - 1; i >= 0; i--) {
-	    		buttons[i].classList.remove('tapped');
-	    	}
+	    	//e.preventDefault();	    	
+	    	this.classList.remove('tapped');	    	
     	}, false); 
     }    
 }
