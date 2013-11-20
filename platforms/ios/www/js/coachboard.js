@@ -71,12 +71,12 @@ function coachboard(canvas) {
 			_context.closePath();
 		}
 		//if ( _end == null) {
-			_context.beginPath();
-			_context.moveTo(_start.x, _start.y);
-			_context.lineTo(_current.x, _current.y);
-			_context.stroke();
-			_context.closePath();
-
+		_context.beginPath();
+		_context.moveTo(_start.x, _start.y);
+		_context.lineTo(_current.x, _current.y);
+		_context.stroke();
+		_context.closePath();
+		
 		//}
 		
 	};
