@@ -37,10 +37,14 @@ function coachboard(canvas) {
 	};
 	
 	this.touchEnd = function(event) {
-		var pos = new vector(event.changedTouches[0].pageX, event.changedTouches[0].pageY);
+		var pos = new vector(event.changedTouches[0].pageX, event.changedTouches[0].pageY),
+			newLine = [];
 		_current = null;
 		_prev = null;
 		_end = pos;
+		newLine["from"] = _start;
+		newLine["to"] = _end;
+		_objects.push(newLine);
 		_this.invalidate(); 
 	};
 
@@ -55,24 +59,26 @@ function coachboard(canvas) {
 
 	// Redraws the whole thing
 	this.invalidate = function() {
-		if(_prev != null ) {
-			//_context.beginPath();
-			_context.moveTo(_prev.x, _prev.y);
-			_context.lineTo(_current.x, _current.y);
-			//_context.closePath();
+		console.log("drawing");
+		
+		_context.clearRect(0,0,_canvas.width, _canvas.height);
+		for(var i = 0; i < _objects.length; i++) {
+
+			_context.beginPath();
+			_context.moveTo(_objects[i]["from"].x, _objects[i]["from"].y);
+			_context.lineTo(_objects[i]["to"].x, _objects[i]["to"].y);
 			_context.stroke();
-			console.log("drawing");
+			_context.closePath();
 		}
-		if (_start != null && _end != null) {
-			_context.clearRect(0, 0, _canvas.width, _canvas.height);
-			//_context.beginPath();
+		//if ( _end == null) {
+			_context.beginPath();
 			_context.moveTo(_start.x, _start.y);
-			_context.lineTo(_end.x, _end.y);
-			//_context.closePath();
+			_context.lineTo(_current.x, _current.y);
 			_context.stroke();
-			_start = null;
-			_end = null;
-		}
+			_context.closePath();
+
+		//}
+		
 	};
 
 }
