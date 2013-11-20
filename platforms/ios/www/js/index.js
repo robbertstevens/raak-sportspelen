@@ -9,19 +9,18 @@ function initializeButtons()
 {
 	var buttons = document.getElementsByTagName('a');
     for (var i = buttons.length - 1; i >= 0; i--) {
-    	buttons[i].addEventListener("touchstart", this.tapped, false);
-    	buttons[i].addEventListener("touchend", this.untapped, false);    	
-    };
-
-    this.tapped = function(){
-    	for (var i = buttons.length - 1; i >= 0; i--) {
-    		buttons[i].classList.add('tapped');
-    	};
-    };
-
-    this.untapped = function(){
-    	for (var i = buttons.length - 1; i >= 0; i--) {
-    		buttons[i].classList.remove('tapped');
-    	};
-    };
+    	console.log(buttons[i]);
+    	buttons[i].addEventListener("touchstart",function(e){
+		    //e.preventDefault();		    
+		    for (var i = buttons.length - 1; i >= 0; i--) {
+		    		buttons[i].classList.add('tapped');
+		    }
+    	}, false);
+	    	buttons[i].addEventListener("touchend", function(e){
+	    	//e.preventDefault();
+	    	for (var i = buttons.length - 1; i >= 0; i--) {
+	    		buttons[i].classList.remove('tapped');
+	    	}
+    	}, false); 
+    }    
 }
