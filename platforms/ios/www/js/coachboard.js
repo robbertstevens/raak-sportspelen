@@ -5,6 +5,10 @@ function main() {
 		cb = new coachboard(canvas);
 
 	cb.initialize();
+
+	document.getElementById('clearButton').addEventListener('touchend', function(e){
+		cb.clear();
+	}, false);
 }
 
 function coachboard(canvas) {
@@ -72,13 +76,20 @@ function coachboard(canvas) {
 		}
 		//if ( _end == null) {
 		_context.beginPath();
-		_context.moveTo(_start.x, _start.y);
-		_context.lineTo(_current.x, _current.y);
+		if(_start != null && _current != null){
+			_context.moveTo(_start.x, _start.y);
+			_context.lineTo(_current.x, _current.y);
+		}
 		_context.stroke();
 		_context.closePath();
 		
 		//}
 		
+	};
+
+	this.clear = function(){
+		_context.clearRect(0,0,_canvas.width, _canvas.height);
+		_objects = [];
 	};
 
 }
