@@ -9,12 +9,18 @@ function main() {
 	document.getElementById('clearButton').addEventListener('touchend', function(e){
 		cb.clear(true);
 	}, false);
+	document.getElementById('lineTool').addEventListener('touchend', function(e){
+		cb.setDrawElement("fixedLine");
+	}, false);
+	document.getElementById('rectTool').addEventListener('touchend', function(e){
+		cb.setDrawElement("rectangle");
+	}, false);
 }
 
 function coachboard(canvas) {
 	var _objects = [], // Alle objecten die op het coachboard komen
 		_canvas = canvas,
-		_context, _start = null, _end = null, _current = null, _prev = null, _this = this;
+		_context, _start = null, _end = null, _current = null, _prev = null, _this = this, _drawElement = "fixedLine";
 
 	this.initialize = function() {
 		_context = this.getContext2d();
@@ -46,7 +52,7 @@ function coachboard(canvas) {
 		_prev = null;
 		_end = pos;
 
-		_objects.push(new rectangle(_start, _end));
+		_objects.push(_this.returnNewDrawElement(_drawElement, _start, _end));
 		_this.invalidate(); 
 	};
 
@@ -86,6 +92,20 @@ function coachboard(canvas) {
 		_context.clearRect(0,0,_canvas.width, _canvas.height);
 		if(full)
 			_objects = [];
+	};
+
+	this.setDrawElement = function(element){
+		_drawElement = element;
+	};
+
+	this.returnNewDrawElement = function(element, start, end){
+		if(element === "fixedLine")
+		{
+			return new line(start, end);
+		}else if(element === "rectangle")
+		{
+			return new rectangle(start, end);
+		}
 	};
 
 }
