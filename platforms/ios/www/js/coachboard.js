@@ -7,7 +7,7 @@ function main() {
 	cb.initialize();
 
 	document.getElementById('clearButton').addEventListener('touchend', function(e){
-		cb.clear();
+		cb.clear(true);
 	}, false);
 }
 
@@ -41,14 +41,12 @@ function coachboard(canvas) {
 	};
 	
 	this.touchEnd = function(event) {
-		var pos = new vector(event.changedTouches[0].pageX, event.changedTouches[0].pageY),
-			newLine = [];
+		var pos = new vector(event.changedTouches[0].pageX, event.changedTouches[0].pageY);
 		_current = null;
 		_prev = null;
 		_end = pos;
-		newLine["from"] = _start;
-		newLine["to"] = _end;
-		_objects.push(newLine);
+
+		_objects.push(new rectangle(_start, _end));
 		_this.invalidate(); 
 	};
 
@@ -65,14 +63,9 @@ function coachboard(canvas) {
 	this.invalidate = function() {
 		console.log("drawing");
 		
-		_context.clearRect(0,0,_canvas.width, _canvas.height);
+		this.clear();
 		for(var i = 0; i < _objects.length; i++) {
-
-			_context.beginPath();
-			_context.moveTo(_objects[i]["from"].x, _objects[i]["from"].y);
-			_context.lineTo(_objects[i]["to"].x, _objects[i]["to"].y);
-			_context.stroke();
-			_context.closePath();
+			_objects[i].draw(_context);
 		}
 		//if ( _end == null) {
 		_context.beginPath();
@@ -87,9 +80,12 @@ function coachboard(canvas) {
 		
 	};
 
-	this.clear = function(){
+	// Very dangerous function
+	// deletes everything from the canvas!
+	this.clear = function(full){
 		_context.clearRect(0,0,_canvas.width, _canvas.height);
-		_objects = [];
+		if(full)
+			_objects = [];
 	};
 
 }
