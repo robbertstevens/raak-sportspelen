@@ -30,17 +30,17 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
+    background-color:#80b117;
+   // background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+  //  background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+   // background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+  //  background-image:-webkit-gradient(
+    //    linear,
+   //     left top,
+    //    left bottom,
+   //     color-stop(0, #A7A7A7),
+    //    color-stop(0.51, #E4E4E4)
+  //  );
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     
@@ -129,13 +129,6 @@ select {
     margin-top: -150px;    
 }
 
-#nextButton
-{
-    margin-top: 195px;
-    width: 300px;
-    height: 50px;
-    font-size:22px;
-}
 
 ::-webkit-scrollbar {
       width: 15px;
@@ -159,17 +152,7 @@ select {
     
 }
 
-.button {
-        padding: 20px;        
-        height: 20px;
-        line-height: 0px;
-        display: inline-block;
-        text-decoration: none;
-        color: #444;
-        font-weight: bold;
-        text-shadow: 0 1px #FFF;
-        border-radius: 2px;
-}
+
 
 a {
         background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.1)), color-stop(100%,rgba(0,0,0,0.3)));
@@ -187,6 +170,18 @@ a.tapped {
         text-shadow: 0 -1px rgba(255,255,255,0.5);
 }
 
+
+
+.button {
+    display: inline-block;
+    padding: 5px;
+    background: #208aee;
+    color: #fff;
+}
+.nextButton
+{
+    width: 300px;
+}  
 .centeredButton{
     height: 100px !important;
     width: 190px !important;
@@ -198,16 +193,6 @@ a.tapped {
     line-height: 55px !important;
     text-align: center !important;
 }
-
-.nextButton
-{
-    margin-top: 15px !important;
-    width: 300px !important;
-    
-    font-size:22px !important;
-    text-align: center !important;
-}  
-
 .backButton{
     margin-top:20px;
     margin-left: 20px;
@@ -217,6 +202,7 @@ a.tapped {
     position: absolute;   
 }
 
+.
 .clearButton{
     position: absolute;  
     
