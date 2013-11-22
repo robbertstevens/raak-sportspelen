@@ -1,0 +1,18 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "D:\\Projecten\\raak-sportspelen\\platforms\\ios\\www"
+		}
+	],
+	"settings": 
+	{
+		"TypeScript":
+		{
+
+			"compileOnSave": true,
+			"compileDir": "D:\\Projecten\\raak-sportspelen\\platforms\\ios\\www\\js"
+		}
+	}
+}
