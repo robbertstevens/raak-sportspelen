@@ -3,9 +3,9 @@ var Test = (function () {
         this.hoi = txt;
     }
     Test.prototype.greet = function () {
-        return "hoi";
+        return "hoiasasg";
     };
     return Test;
 })();
 
-var t = new Test("hoi");
+var t = new Test("hoasdaaasdasdssdia");

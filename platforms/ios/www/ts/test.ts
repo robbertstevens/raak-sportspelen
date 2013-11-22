@@ -4,10 +4,10 @@ class Test {
 		this.hoi = txt;
 	}
 	greet() {
-		return "hoi";
+		return "hoiasasg";
 	}
 
 }
 
-var t = new Test("hoi");
+var t = new Test("hoasdaaasdasdssdia");
   
