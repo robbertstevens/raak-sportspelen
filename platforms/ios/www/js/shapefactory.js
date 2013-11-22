@@ -1,11 +1,18 @@
 /// <reference path="references.ts" />
 var ShapeFactory = (function () {
-    function ShapeFactory() {
+    function ShapeFactory(context) {
+        this._context = context;
     }
-    ShapeFactory.prototype.constructor = function () {
-    };
-
-    ShapeFactory.prototype.CreateShape = function (shape) {
+    ShapeFactory.prototype.CreateShape = function (shape, from, to) {
+        switch (shape) {
+            case "fixedLine":
+                this._newShape = new Line(from, to, this._context);
+                break;
+            case "rectangle":
+                this._newShape = new Rectangle(from, to, this._context);
+                break;
+        }
+        return this._newShape;
     };
     return ShapeFactory;
 })();

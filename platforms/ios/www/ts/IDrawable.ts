@@ -2,7 +2,7 @@
 interface IDrawable{
 	from: Vector;
 	to: Vector;
-	canvas: CanvasRenderingContext2D;
+	context: CanvasRenderingContext2D;
 
 	draw(): void;
 }

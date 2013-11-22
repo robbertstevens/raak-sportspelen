@@ -2,19 +2,19 @@
 class Rectangle implements IDrawable{
 	from: Vector;
 	to: Vector;
-	canvas: CanvasRenderingContext2D;
+	context: CanvasRenderingContext2D;
 
-	constructor(from:Vector, to:Vector, canvas:CanvasRenderingContext2D){
+	constructor(from:Vector, to:Vector, context:CanvasRenderingContext2D){
 		this.from = from;
 		this.to = to;
-		this.canvas = canvas;
+		this.context = context;
 	}
 
 	draw()
 	{
-		this.canvas.beginPath();
-		this.canvas.rect(this.from.x,this.from.y,(this.to.x -this.from.x), (this.to.y - this.from.y));
-		this.canvas.stroke();
-		this.canvas.closePath();
+		this.context.beginPath();
+		this.context.rect(this.from.x,this.from.y,(this.to.x -this.from.x), (this.to.y - this.from.y));
+		this.context.stroke();
+		this.context.closePath();
 	}
 }

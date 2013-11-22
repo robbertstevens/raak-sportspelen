@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", main);
 function main()
 {
     initializeButtons();
+    var canvas = document.getElementsByTagName("canvas")[0],
+                cb = new CoachBoard(canvas);
 }
 
 function initializeButtons()

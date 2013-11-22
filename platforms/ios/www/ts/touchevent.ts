@@ -29,3 +29,4 @@ declare var TouchEvent: {
     prototype: TouchEvent;
     new(): TouchEvent;
 }
+
