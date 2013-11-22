@@ -19,7 +19,7 @@
 			"file": "js/coachboard.js",
 			"settings":
 			{
-				"buffer_size": 2251,
+				"buffer_size": 2841,
 				"line_ending": "Windows"
 			}
 		},
@@ -48,42 +48,10 @@
 			}
 		},
 		{
-			"contents": "class Test {\n	hoi: string;\n	constructor(txt: string) {\n		this.hoi = txt;\n	}\n	greet() {\n		return \"hoi\";\n	}\n\n}\n\nvar t = new Test(\"hoi\");\n\n",
 			"file": "ts/test.ts",
-			"file_size": 144,
-			"file_write_time": 130295855210700314,
 			"settings":
 			{
-				"buffer_size": 136,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "{\n	/*\n		The directories you would like to include in $PATH environment variable.\n		Use this if your node installation is at a seperate location and getting errors such as `cannot find node executable`\n\n		example:\n		\"envPATH\": \"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\"\n\n	*/\n	\"envPATH\": \"\",\n	/*\n		The directory containing your tsc binary. Usually\n		/usr/local/bin or /usr/bin.\n	*/\n	\"binDir\": \"/usr/bin\"\n	/*\n		Enable or disable refresh the compiled Output on Save.\n		Only available for watch mode.\n	*/\n,	\"watchOnSave\": true\n	/*\n		Enable Compiling on save. It will compile into the same folder.\n	*/\n,	\"compileOnSave\": false\n	/*\n		## Enable compiling to a specific directory.\n		#### Description\n\n		if it is a string like 'some/directory' then `-o some/directory` will be added to `tsc` compiler.\n		if it is false or not string then it will compile your `script.tsc` to the directory it is in.\n\n		#### Example:\n		Directory is relative to the file you are editing if specified such as\n			compileDir\": \"out\"\n		Directory is absolute if specified such as\n			compileDir\": \"/home/logan/Desktop/out\"\n\n	*/\n,	\"compileDir\": false\n	/*\n		## Enable compiling to a specific relative directories.\n\n		#### Example:\n		Set absolute path for compile dir:\n			\"compileDir\": \"/home/user/projects/js\"\n		And specified folders\n			\"relativeDir\": \"/home/user/projects/tsc\"\n			\"compilePaths\":\n			{\n				\"/home/user/projects/tsc\": \"/home/user/projects/first/js\",\n				\"/home/user/projects/second/tsc\": \"../js\",\n			}\n\n		So\n			\"/home/user/projects/tsc/app.tsc\" will compile to \"/home/user/projects/first/js/app.js\"\n			\"/home/user/projects/tsc/models/prod.tsc\" will compile to \"/home/user/projects/first/js/models/prod.js\"\n			\"/home/user/projects/tsc/second/tsc/app2.tsc\" will compile to \"/home/user/projects/second/js/app2.js\"\n			\"/home/user/projects/main.tsc\" will compile to \"/home/user/projects/js/main.js\"\n\n	*/\n,	\"compilePaths\": false\n\n	/*\n		## Enable source maps support\n  		CoffeeScript 1.6.1 and above include support for better tscscript debugging.\n  		Browsers that support it can trace your bugs to your original tscscript source code,\n  		instead of the javascript that's being evaluated\n	*/\n, \"sourceMaps\":false\n}\n",
-			"file": "/C/Users/Robbert/AppData/Roaming/Sublime Text 3/Packages/Better TypeScript/TypeScript.sublime-settings",
-			"file_size": -1,
-			"file_write_time": -1,
-			"settings":
-			{
-				"buffer_size": 2208,
-				"line_ending": "Windows",
-				"read_only": true,
-				"scratch": true
-			}
-		},
-		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 1875,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Robbert/AppData/Roaming/Sublime Text 3/Packages/T3S/Typescript.sublime-settings",
-			"settings":
-			{
-				"buffer_size": 590,
+				"buffer_size": 138,
 				"line_ending": "Windows"
 			}
 		}
@@ -135,8 +103,11 @@
 	},
 	"file_history":
 	[
-		"/C/Users/Robbert/AppData/Roaming/Sublime Text 3/Packages/User/Typescript.sublime-settings",
+		"/D/Projecten/raak-sportspelen/platforms/ios/www/raak-sportspelen.sublime-project",
+		"/D/Projecten/raak-sportspelen/platforms/ios/www/js/test.js",
 		"/C/Users/Robbert/AppData/Roaming/Sublime Text 3/Packages/T3S/Typescript.sublime-settings",
+		"/C/Users/Robbert/AppData/Roaming/Sublime Text 3/Packages/Better TypeScript/TypeScript.sublime-settings",
+		"/C/Users/Robbert/AppData/Roaming/Sublime Text 3/Packages/User/Typescript.sublime-settings",
 		"/D/Projecten/raak-sportspelen/platforms/ios/www/js/misc.js",
 		"/D/Projecten/ggwp/index.html",
 		"/D/Projecten/raak-sportspelen/platforms/ios/www/css/index.css",
@@ -194,7 +165,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -203,7 +174,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2251,
+						"buffer_size": 2841,
 						"regions":
 						{
 						},
@@ -731,15 +702,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 136,
+						"buffer_size": 138,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								136,
-								136
+								138,
+								138
 							]
 						],
 						"settings":
@@ -855,194 +826,6 @@
 							],
 							"sublime_auto_complete": true,
 							"syntax": "Packages/T3S/Typescript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/C/Users/Robbert/AppData/Roaming/Sublime Text 3/Packages/Better TypeScript/TypeScript.sublime-settings",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2208,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2208,
-								2208
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 270.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "index.html",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 1875,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								860,
-								848
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/C/Users/Robbert/AppData/Roaming/Sublime Text 3/Packages/T3S/Typescript.sublime-settings",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 590,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
