@@ -2,6 +2,7 @@
 var CoachBoard = (function () {
     function CoachBoard(canvas) {
         this._canvas = canvas;
+        this._rect = this._canvas.getBoundingClientRect();
         this._objects = [];
         this._shapeType = "fixedLine";
         this._context = this.getContext2d();
@@ -16,16 +17,15 @@ var CoachBoard = (function () {
         return this._canvas.getContext("2d");
     };
     CoachBoard.prototype.touchStart = function (e) {
-        //var pos = new Vector(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
-        var pos = this.getMousePos(e);
-        console.log(e);
+        var pos = new Vector(e.targetTouches[0].pageX - this._rect.left, e.targetTouches[0].pageY - this._rect.top);
+
         this._current = pos;
         this._start = pos;
     };
 
     CoachBoard.prototype.touchMove = function (e) {
-        //var pos = new Vector(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
-        var pos = this.getMousePos(e);
+        var pos = new Vector(e.targetTouches[0].pageX - this._rect.left, e.targetTouches[0].pageY - this._rect.top);
+
         this._prev = this._current;
         this._current = pos;
         if (this._shapeType === "freeLine") {
@@ -35,8 +35,8 @@ var CoachBoard = (function () {
     };
 
     CoachBoard.prototype.touchEnd = function (e) {
-        //var pos = new Vector(e.changedTouches[0].pageX, e.changedTouches[0].pageY);
-        var pos = this.getMousePos(e);
+        var pos = new Vector(e.changedTouches[0].pageX - this._rect.left, e.changedTouches[0].pageY - this._rect.top);
+
         this._prev = null;
         this._current = null;
         this._end = pos;
@@ -65,11 +65,6 @@ var CoachBoard = (function () {
 
     CoachBoard.prototype.setShapeType = function (shape) {
         this._shapeType = shape;
-    };
-
-    CoachBoard.prototype.getMousePos = function (e) {
-        var rect = this._canvas.getBoundingClientRect();
-        return new Vector(e.changedTouches[0].pageX - rect.left, e.changedTouches[0].pageY - rect.top);
     };
     return CoachBoard;
 })();

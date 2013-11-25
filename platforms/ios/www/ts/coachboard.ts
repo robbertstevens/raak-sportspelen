@@ -10,9 +10,11 @@ class CoachBoard {
 	private	_start: Vector;
 	private _shapeType: string;
 	private _shapeFactory: ShapeFactory;
+	private _rect: ClientRect;
 
 	constructor(canvas: HTMLCanvasElement) {
-		this._canvas = canvas;		
+		this._canvas = canvas;
+		this._rect = this._canvas.getBoundingClientRect();		
 		this._objects = [];
 		this._shapeType = "fixedLine";
 		this._context = this.getContext2d();
@@ -27,16 +29,15 @@ class CoachBoard {
 		return this._canvas.getContext("2d");
 	}
 	public touchStart(e: TouchEvent) {		
-		//var pos = new Vector(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
-		var pos = this.getMousePos(e);
-		console.log(e);
+		var pos = new Vector(e.targetTouches[0].pageX - this._rect.left, e.targetTouches[0].pageY - this._rect.top);		
+		
 		this._current = pos;
 		this._start = pos;		
 	}
 
 	public touchMove(e: TouchEvent) {
-		//var pos = new Vector(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
-		var pos = this.getMousePos(e);
+		var pos = new Vector(e.targetTouches[0].pageX - this._rect.left, e.targetTouches[0].pageY - this._rect.top);
+		
 		this._prev = this._current;
 		this._current = pos;
 		if(this._shapeType === "freeLine")
@@ -47,8 +48,8 @@ class CoachBoard {
 	}
 
 	public touchEnd(e: TouchEvent) {		
-		//var pos = new Vector(e.changedTouches[0].pageX, e.changedTouches[0].pageY);
-		var pos = this.getMousePos(e);
+		var pos = new Vector(e.changedTouches[0].pageX - this._rect.left, e.changedTouches[0].pageY - this._rect.top);
+		
 		this._prev = null;
 		this._current = null;
 		this._end = pos;		
@@ -80,9 +81,4 @@ class CoachBoard {
 	public setShapeType(shape: string){
 		this._shapeType = shape;
 	}
-
-	private getMousePos(e: TouchEvent) {
-        var rect = this._canvas.getBoundingClientRect();
-        return new Vector( e.changedTouches[0].pageX - rect.left, e.changedTouches[0].pageY - rect.top);          
-      }
 } 
