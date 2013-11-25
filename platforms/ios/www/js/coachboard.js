@@ -33,6 +33,7 @@ var CoachBoard = (function () {
         this._prev = null;
         this._current = null;
         this._end = pos;
+        console.log(this._shapeType);
         this._objects.push(this._shapeFactory.CreateShape(this._shapeType, this._start, this._end));
         this.invalidate();
     };
@@ -45,6 +46,7 @@ var CoachBoard = (function () {
         this._objects.forEach(function (obj) {
             obj.draw();
         });
+        console.log(this._objects);
     };
     CoachBoard.prototype.clear = function (full) {
         this._context.clearRect(0, 0, this._canvas.width, this._canvas.height);
