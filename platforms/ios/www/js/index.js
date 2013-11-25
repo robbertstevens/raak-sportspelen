@@ -2,9 +2,18 @@ document.addEventListener("DOMContentLoaded", main);
 
 function main()
 {
-    initializeButtons();
-    var canvas = document.getElementsByTagName("canvas")[0],
-                cb = new CoachBoard(canvas);
+    initializeButtons();    
+    var canvas = document.getElementsByTagName("canvas")[0];
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight; 
+    cb = new CoachBoard(canvas);
+
+    document.getElementById('clearButton').addEventListener('touchend', function(e){
+        cb.clear(true);
+    });
+    document.getElementById('clearButton').addEventListener('touchend', function(e){
+        cb.setShapeType("rectangle");
+    });           
 }
 
 function initializeButtons()
@@ -20,5 +29,6 @@ function initializeButtons()
 	    	//e.preventDefault();	    	
 	    	this.classList.remove('tapped');	    	
     	}, false); 
-    }    
+    }
+
 }
