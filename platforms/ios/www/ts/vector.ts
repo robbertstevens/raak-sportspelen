@@ -5,7 +5,7 @@ class Vector {
 		this.x = x;
 		this.y = y;
 	}
-	difference(target: Vector) {
-		return new Vector(this.x - target.x, this.y - target.y);
+	public difference(target: Vector) {
+		return new Vector(target.x - this.x, target.y -this.y);
 	}
 }

@@ -43,7 +43,7 @@ class CoachBoard {
 		if(this._shapeType === "freeLine")
 		{
 			var dif = this._prev.difference(this._current);
-			if ( dif.x > 5 && dif.y > 5)
+			if ( dif.x > 0 || dif.y > 0)
 			this._objects.push(this._shapeFactory.CreateShape(this._shapeType,this._prev, this._current));
 		}
 		this.invalidate();

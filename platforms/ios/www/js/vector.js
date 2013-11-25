@@ -4,7 +4,7 @@ var Vector = (function () {
         this.y = y;
     }
     Vector.prototype.difference = function (target) {
-        return new Vector(this.x - target.x, this.y - target.y);
+        return new Vector(target.x - this.x, target.y - this.y);
     };
     return Vector;
 })();
