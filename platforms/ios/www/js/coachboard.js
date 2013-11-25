@@ -24,7 +24,7 @@ var CoachBoard = (function () {
     };
 
     CoachBoard.prototype.touchMove = function (e) {
-        var pos = new Vector(e.targetTouches[0].pageX - this._rect.left, e.targetTouches[0].pageY - this._rect.top);
+        var pos = new Vector(e.changedTouches[0].pageX - this._rect.left, e.changedTouches[0].pageY - this._rect.top);
 
         this._prev = this._current;
         this._current = pos;
