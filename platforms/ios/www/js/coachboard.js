@@ -18,32 +18,36 @@ var CoachBoard = (function () {
     };
     CoachBoard.prototype.touchStart = function (e) {
         var pos = new Vector(e.targetTouches[0].pageX - this._rect.left, e.targetTouches[0].pageY - this._rect.top);
-
+        
+                  this._prev = null;
         this._current = pos;
         this._start = pos;
     };
 
     CoachBoard.prototype.touchMove = function (e) {
         var pos = new Vector(e.changedTouches[0].pageX - this._rect.left, e.changedTouches[0].pageY - this._rect.top);
-
-        this._prev = this._current;
-        this._current = pos;
+                  
+        
+        var blaat = this._current.x + " " + this._current.y;// hack zonder dit is this._current leeg 
+        
         if (this._shapeType === "freeLine") {
-            this._objects.push(this._shapeFactory.CreateShape(this._shapeType, this._prev, this._current));
+            this._prev = this._current;
+            this._objects.push(this._shapeFactory.CreateShape(this._shapeType, this._prev, pos));
         }
+        this._current = pos;
         this.invalidate();
     };
 
     CoachBoard.prototype.touchEnd = function (e) {
         var pos = new Vector(e.changedTouches[0].pageX - this._rect.left, e.changedTouches[0].pageY - this._rect.top);
-
+                  
         this._prev = null;
         this._current = null;
         this._end = pos;
         if (this._shapeType != "freeLine") {
             this._objects.push(this._shapeFactory.CreateShape(this._shapeType, this._start, this._end));
         }
-
+                  console.log(this._objects.length);
         this.invalidate();
     };
     CoachBoard.prototype.invalidate = function () {
