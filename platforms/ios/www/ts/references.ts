@@ -4,4 +4,5 @@
 /// <reference path="IDrawable.ts"/>
 /// <reference path="Line.ts"/>
 /// <reference path="Rectangle.ts"/>
+/// <reference path="FreeLine.ts"/>
 /// <reference path="ShapeFactory.ts"/>

@@ -25,6 +25,9 @@ var CoachBoard = (function () {
         var pos = new Vector(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
         this._prev = this._current;
         this._current = pos;
+        if (this._shapeType === "freeLine") {
+            this._objects.push(this._shapeFactory.CreateShape(this._shapeType, this._prev, this._current));
+        }
         this.invalidate();
     };
 

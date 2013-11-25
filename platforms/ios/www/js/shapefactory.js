@@ -11,6 +11,9 @@ var ShapeFactory = (function () {
             case "rectangle":
                 this._newShape = new Rectangle(from, to, this._context);
                 break;
+            case "freeLine":
+                this._newShape = new FreeLine(from, to, this._context);
+                break;
         }
         return this._newShape;
     };
