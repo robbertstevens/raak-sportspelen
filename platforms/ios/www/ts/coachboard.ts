@@ -27,13 +27,16 @@ class CoachBoard {
 		return this._canvas.getContext("2d");
 	}
 	public touchStart(e: TouchEvent) {		
-		var pos = new Vector(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
+		//var pos = new Vector(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
+		var pos = this.getMousePos(e);
+		console.log(e);
 		this._current = pos;
 		this._start = pos;		
 	}
 
 	public touchMove(e: TouchEvent) {
-		var pos = new Vector(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
+		//var pos = new Vector(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
+		var pos = this.getMousePos(e);
 		this._prev = this._current;
 		this._current = pos;
 		if(this._shapeType === "freeLine")
@@ -44,25 +47,28 @@ class CoachBoard {
 	}
 
 	public touchEnd(e: TouchEvent) {		
-		var pos = new Vector(e.changedTouches[0].pageX, e.changedTouches[0].pageY);
+		//var pos = new Vector(e.changedTouches[0].pageX, e.changedTouches[0].pageY);
+		var pos = this.getMousePos(e);
 		this._prev = null;
 		this._current = null;
-		this._end = pos;	
-		console.log(this._shapeType);		
-		this._objects.push(this._shapeFactory.CreateShape(this._shapeType,this._start, this._end));
+		this._end = pos;		
+		if(this._shapeType != "freeLine")
+		{
+			this._objects.push(this._shapeFactory.CreateShape(this._shapeType,this._start, this._end));	
+		}		
+		
 		this.invalidate();
 	} 
 	private invalidate() {
 		this.clear(false);
-		if(this._start != null && this._current != null)
+		if(this._start != null && this._current != null && this._shapeType != "freeLine")
 		{
 			this._shapeFactory.CreateShape(this._shapeType,this._start,this._current).draw();	
 		}		
 
 		this._objects.forEach(function(obj) {
 			obj.draw();
-		});
-		console.log(this._objects);
+		});		
 	}
 	private clear(full: boolean) {
 		this._context.clearRect(0,0,this._canvas.width, this._canvas.height);
@@ -74,4 +80,9 @@ class CoachBoard {
 	public setShapeType(shape: string){
 		this._shapeType = shape;
 	}
+
+	private getMousePos(e: TouchEvent) {
+        var rect = this._canvas.getBoundingClientRect();
+        return new Vector( e.changedTouches[0].pageX - rect.left, e.changedTouches[0].pageY - rect.top);          
+      }
 } 

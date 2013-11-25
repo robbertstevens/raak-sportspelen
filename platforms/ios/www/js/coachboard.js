@@ -16,13 +16,16 @@ var CoachBoard = (function () {
         return this._canvas.getContext("2d");
     };
     CoachBoard.prototype.touchStart = function (e) {
-        var pos = new Vector(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
+        //var pos = new Vector(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
+        var pos = this.getMousePos(e);
+        console.log(e);
         this._current = pos;
         this._start = pos;
     };
 
     CoachBoard.prototype.touchMove = function (e) {
-        var pos = new Vector(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
+        //var pos = new Vector(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
+        var pos = this.getMousePos(e);
         this._prev = this._current;
         this._current = pos;
         if (this._shapeType === "freeLine") {
@@ -32,24 +35,26 @@ var CoachBoard = (function () {
     };
 
     CoachBoard.prototype.touchEnd = function (e) {
-        var pos = new Vector(e.changedTouches[0].pageX, e.changedTouches[0].pageY);
+        //var pos = new Vector(e.changedTouches[0].pageX, e.changedTouches[0].pageY);
+        var pos = this.getMousePos(e);
         this._prev = null;
         this._current = null;
         this._end = pos;
-        console.log(this._shapeType);
-        this._objects.push(this._shapeFactory.CreateShape(this._shapeType, this._start, this._end));
+        if (this._shapeType != "freeLine") {
+            this._objects.push(this._shapeFactory.CreateShape(this._shapeType, this._start, this._end));
+        }
+
         this.invalidate();
     };
     CoachBoard.prototype.invalidate = function () {
         this.clear(false);
-        if (this._start != null && this._current != null) {
+        if (this._start != null && this._current != null && this._shapeType != "freeLine") {
             this._shapeFactory.CreateShape(this._shapeType, this._start, this._current).draw();
         }
 
         this._objects.forEach(function (obj) {
             obj.draw();
         });
-        console.log(this._objects);
     };
     CoachBoard.prototype.clear = function (full) {
         this._context.clearRect(0, 0, this._canvas.width, this._canvas.height);
@@ -60,6 +65,11 @@ var CoachBoard = (function () {
 
     CoachBoard.prototype.setShapeType = function (shape) {
         this._shapeType = shape;
+    };
+
+    CoachBoard.prototype.getMousePos = function (e) {
+        var rect = this._canvas.getBoundingClientRect();
+        return new Vector(e.changedTouches[0].pageX - rect.left, e.changedTouches[0].pageY - rect.top);
     };
     return CoachBoard;
 })();

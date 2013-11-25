@@ -11,14 +11,15 @@ function main()
     document.getElementById('clearButton').addEventListener('touchend', function(e){
         cb.clear(true);
     });
-     document.getElementById('rectangleButton').addEventListener('touchend', function(e){
-        cb.setShapeType("rectangle");
-        console.log
+    document.getElementById('rectangleButton').addEventListener('touchend', function(e){
+        cb.setShapeType("rectangle");        
     });  
-     document.getElementById('fixedLineButton').addEventListener('touchend', function(e){
-        cb.setShapeType("fixedLine");
-        console.log
-    });         
+    document.getElementById('fixedLineButton').addEventListener('touchend', function(e){
+        cb.setShapeType("fixedLine");        
+    });   
+    document.getElementById('freeLineButton').addEventListener('touchend', function(e){
+        cb.setShapeType("freeLine");        
+    });      
 }
 
 function initializeButtons()
