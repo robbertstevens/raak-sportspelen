@@ -11,9 +11,14 @@ function main()
     document.getElementById('clearButton').addEventListener('touchend', function(e){
         cb.clear(true);
     });
-    document.getElementById('clearButton').addEventListener('touchend', function(e){
+     document.getElementById('rectangleButton').addEventListener('touchend', function(e){
         cb.setShapeType("rectangle");
-    });           
+        console.log
+    });  
+     document.getElementById('fixedLineButton').addEventListener('touchend', function(e){
+        cb.setShapeType("fixedLine");
+        console.log
+    });         
 }
 
 function initializeButtons()

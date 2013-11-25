@@ -47,7 +47,8 @@ class CoachBoard {
 		var pos = new Vector(e.changedTouches[0].pageX, e.changedTouches[0].pageY);
 		this._prev = null;
 		this._current = null;
-		this._end = pos;				
+		this._end = pos;	
+		console.log(this._shapeType);		
 		this._objects.push(this._shapeFactory.CreateShape(this._shapeType,this._start, this._end));
 		this.invalidate();
 	} 
@@ -61,6 +62,7 @@ class CoachBoard {
 		this._objects.forEach(function(obj) {
 			obj.draw();
 		});
+		console.log(this._objects);
 	}
 	private clear(full: boolean) {
 		this._context.clearRect(0,0,this._canvas.width, this._canvas.height);

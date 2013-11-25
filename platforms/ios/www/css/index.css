@@ -131,9 +131,6 @@ select {
     margin-top:50%;*/
     
 }
-
-
-
 a {
         background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.1)), color-stop(100%,rgba(0,0,0,0.3)));
         background: -webkit-linear-gradient(top, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.3) 100%);
@@ -148,11 +145,7 @@ a.tapped {
         text-shadow: 0 -1px rgba(255,255,255,0.5);
 }
 
-
-
 .button {
-    position: absolute;
-    right: 0;
     display: inline-block;
     padding: 5px;
     background: #208aee;
@@ -163,28 +156,15 @@ a.tapped {
     border-radius: 5px;
     border: 1px solid rgba(32,138,238,.5);
     box-shadow: 1px 1px 2px rgba(150,150,150,1);
-    margin-top: 20px;
-    margin-left: 20px;
 }
 .nextButton
 {
     width: 300px;
     margin-top: 10px;
 }  
-.centeredButton{}
-.backButton{
-    margin-top:20px;
-    margin-left: 20px;
-}
 
-.canvasButton{
-    position: absolute;   
-}
 
-.
-.clearButton{
-    position: absolute;  
-    
+.clearButto {
     padding: 20px;      
     height: 20px;
     line-height: 0px;
