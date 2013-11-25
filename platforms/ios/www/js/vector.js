@@ -3,8 +3,8 @@ var Vector = (function () {
         this.x = x;
         this.y = y;
     }
-    Vector.prototype.difference = function (from, to) {
-        return new Vector(from.x - to.x, from.y - to.y);
+    Vector.prototype.difference = function (target) {
+        return new Vector(this.x - target.x, this.y - target.y);
     };
     return Vector;
 })();
