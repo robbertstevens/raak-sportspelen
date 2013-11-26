@@ -35,20 +35,30 @@ class CoachBoard {
 		var pos = new Vector(e.targetTouches[0].pageX - this._rect.left, e.targetTouches[0].pageY - this._rect.top);		
 		
 		this._current = pos;
-		this._start = pos;		
+		this._start = pos;
+		this._prev = pos;		
 	}
 
 	public touchMove(e: TouchEvent) {
 		var pos = new Vector(e.changedTouches[0].pageX - this._rect.left, e.changedTouches[0].pageY - this._rect.top);
 		
-		this._prev = this._current;
-		this._current = pos;
 		if(this._shapeType === "freeLine")
 		{
-			var dif = this._prev.difference(this._current);
-			if ( dif.x > 0 || dif.y > 0)
-			this._objects.push(this._shapeFactory.CreateShape(this._shapeType,this._prev, this._current));
+			var diff = null;
+			if ( this._prev != null ) {
+				diff = this._prev.difference(pos);
+			}
+
+			if (diff != null ) {
+				if ( diff.x > 5 && diff.y > 5) {
+
+						
+					this._objects.push(this._shapeFactory.CreateShape(this._shapeType, this._prev, pos));this._prev = this._current;	
+
+				}
+			}
 		}
+		this._current = pos;
 		this.invalidate();
 	}
 
@@ -60,10 +70,9 @@ class CoachBoard {
 		this._end = pos;		
 		if(this._shapeType != "freeLine")
 		{
-
 			this._objects.push(this._shapeFactory.CreateShape(this._shapeType,this._start, this._end));	
 		}		
-		
+		console.log(this._objects.length)
 		this.invalidate();
 	} 
 	private invalidate() {

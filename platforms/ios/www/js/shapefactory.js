@@ -4,18 +4,17 @@ var ShapeFactory = (function () {
         this._context = context;
     }
     ShapeFactory.prototype.CreateShape = function (shape, from, to) {
+        var s = null;
         switch (shape) {
+            case "freeLine":
             case "fixedLine":
-                this._newShape = new Line(from, to, this._context);
+                s = new Line(from, to, this._context);
                 break;
             case "rectangle":
-                this._newShape = new Rectangle(from, to, this._context);
-                break;
-            case "freeLine":
-                this._newShape = new FreeLine(from, to, this._context);
+                s = new Rectangle(from, to, this._context);
                 break;
         }
-        return this._newShape;
+        return s;
     };
     return ShapeFactory;
 })();

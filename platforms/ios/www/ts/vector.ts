@@ -6,6 +6,6 @@ class Vector {
 		this.y = y;
 	}
 	public difference(target: Vector) {
-		return new Vector(target.x - this.x, target.y -this.y);
+		return new Vector(Math.abs(target.x - this.x), Math.abs(target.y -this.y));
 	}
 }
