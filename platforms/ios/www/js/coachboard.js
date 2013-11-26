@@ -6,6 +6,7 @@ var CoachBoard = (function () {
         this._objects = [];
         this._shapeType = "fixedLine";
         this._context = this.getContext2d();
+        this.drawField();
 
         this._shapeFactory = new ShapeFactory(this._context);
 
@@ -67,6 +68,12 @@ var CoachBoard = (function () {
 
     CoachBoard.prototype.setShapeType = function (shape) {
         this._shapeType = shape;
+    };
+
+    CoachBoard.prototype.drawField = function () {
+        var veld = JSON.parse(RaakStorage.getItem("veld"));
+        console.log();
+        this._canvas.style.backgroundColor = veld.fieldColor;
     };
     return CoachBoard;
 })();

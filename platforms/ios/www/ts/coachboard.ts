@@ -18,12 +18,15 @@ class CoachBoard {
 		this._objects = [];
 		this._shapeType = "fixedLine";
 		this._context = this.getContext2d();
+		this.drawField();
 		
 		this._shapeFactory = new ShapeFactory(this._context);	
 
 		this._canvas.addEventListener("touchstart", this.touchStart.bind(this), false);
 		this._canvas.addEventListener("touchmove", this.touchMove.bind(this), false);
-		this._canvas.addEventListener("touchend", this.touchEnd.bind(this), false);	
+		this._canvas.addEventListener("touchend", this.touchEnd.bind(this), false);
+		
+		
 	}
 	private getContext2d() {
 		return this._canvas.getContext("2d");
@@ -83,5 +86,12 @@ class CoachBoard {
 
 	public setShapeType(shape: string){
 		this._shapeType = shape;
+	}
+
+	public drawField()
+	{
+		var veld = <PlayField>JSON.parse(RaakStorage.getItem("veld"));
+		console.log();
+	  this._canvas.style.backgroundColor = veld.fieldColor;
 	}
 } 

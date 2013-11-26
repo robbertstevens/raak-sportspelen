@@ -6,3 +6,5 @@
 /// <reference path="Rectangle.ts"/>
 /// <reference path="FreeLine.ts"/>
 /// <reference path="ShapeFactory.ts"/>
+/// <reference path="RaakStorage.ts"/>
+/// <reference path="PlayField.ts"/>

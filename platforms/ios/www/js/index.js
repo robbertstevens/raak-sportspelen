@@ -19,14 +19,13 @@ function main()
     });   
     document.getElementById('freeLineButton').addEventListener('touchend', function(e){
         cb.setShapeType("freeLine");        
-    });      
+    });
 }
 
 function initializeButtons()
 {
 	var buttons = document.getElementsByTagName('a');
-    for (var i = buttons.length - 1; i >= 0; i--) {
-    	console.log(buttons[i]);
+    for (var i = buttons.length - 1; i >= 0; i--) {    	
     	buttons[i].addEventListener("touchstart",function(e){
 		    //e.preventDefault();
 		    this.classList.add('tapped');		    
